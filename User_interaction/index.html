@@ -1,0 +1,37 @@
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>CoffeeVis</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/data_extractor.js"></script>
+  <style>
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+  </style>
+</head>
+<body onload="init()"> 
+
+<div style="margin:30;">
+  <div style="display: table-cell; width: 300;">
+    <label for="cuisine_id">Cuisines: </label><select id="cuisine_id" onchange="populate_recipe()" >
+      <option val="sales">None</option>
+    </select>
+  </div>
+  <div style="display: table-cell; width: 500;">
+    <label for="recipe_id">Recipe: </label><select id="recipe_id">
+     <option val="profit">None</option>
+    </select>
+  </div>
+  <div style="display: table-cell; width: 150;">
+    <button id="update" onclick="fetch_recipe_details()">Fetch Recipe</button>
+  </div>
+</div>
+
+<div id="vis"></div>
+
+</body>
+</html>

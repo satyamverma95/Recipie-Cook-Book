@@ -1,0 +1,63 @@
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Spice Up</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--<script src="../js/data_extractor.js"></script>-->
+  <script type="text/javascript" src="{{url_for('static', filename='data_extractor.js')}}"></script>
+  <style>
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+  </style>
+  <link rel="stylesheet" type= "text/css" href="{{url_for('static', filename='styles/stylemax.css')}}" />
+</head>
+<body onload="init()"> 
+
+<h1 >Welcome to Group#13 NLP Recipe Parser :)</h1>
+<h2>We are delighted to have you here!!</h2>
+
+    <div id = "cuisine">
+        <label for="cuisine_id">Cuisines: </label><select id="cuisine_id" onchange="populate_recipe()" >
+        <option val="sales">None</option>
+        </select>
+    </div>
+
+   <div id= "recipe">
+        <label for="recipe_id">Recipe: </label><select id="recipe_id">
+        <option val="profit">None</option>
+        </select>
+   </div>
+
+  <div id = "Update_click_div">
+    <button id="update" onclick="fetch_recipe_details()">Fetch Recipe</button>
+  </div>
+  
+  <div id="recipe_directions">
+  </div>
+  
+  <div id="navigation_button">
+    <button id="Prev" onclick="process_recipes_data(this.id)" disabled>Prev</button>
+    <button id="Next" onclick="process_recipes_data(this.id)">Next</button>
+  </div>
+  
+  <div id="Question_div">
+    <input id="Question_input_id"></input>
+    <input id="Servings_id"></input>
+    <button id="QSubmit" onclick="ask_question()">Submit</button>
+  </div>
+ 
+  <div id="Answer_div">
+  </div>
+  <div id="Speech_id">
+    <p><button type="button" onclick="runSpeechRecognition()">Speech to Text</button>
+    <div id="output" class="hide"></div>
+  </div>
+
+
+</div>
+
+<div id="vis"></div>
